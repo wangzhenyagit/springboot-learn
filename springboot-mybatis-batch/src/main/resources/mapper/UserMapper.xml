@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bobo.mapper.UserMapper" >
+    <sql id="Column_List">
+        id, userName, age
+    </sql>
+
+    <select id="findById" parameterType="java.lang.Long" resultType="com.bobo.entity.User">
+        SELECT
+        <include refid="Column_List"/>
+        FROM users
+        WHERE id = #{id}
+    </select>
+
+    <insert id="batchInsert" parameterType="java.util.List">
+        INSERT INTO
+          users
+          (id, userName, age)
+        VALUES
+        <foreach collection="list" item="user" index="index" separator=",">
+            (
+            #{user.id, jdbcType=BIGINT},
+            #{user.userName, jdbcType=VARCHAR },
+            #{user.age, jdbcType=INTEGER}
+            )
+        </foreach>
+    </insert>
+
+</mapper>
