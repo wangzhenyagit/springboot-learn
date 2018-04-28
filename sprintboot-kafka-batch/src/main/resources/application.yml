@@ -1,0 +1,9 @@
+kafka:
+  bootstrap-servers: 10.45.152.238:9092
+  topic:
+    batch: wzy-topic1
+
+
+
+
+
