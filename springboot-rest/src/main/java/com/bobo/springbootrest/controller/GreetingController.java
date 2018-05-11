@@ -1,5 +1,6 @@
-package com.bobo.springbootrest.hello;
+package com.bobo.springbootrest.controller;
 
+import com.bobo.springbootrest.bean.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

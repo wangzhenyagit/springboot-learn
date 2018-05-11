@@ -1,4 +1,4 @@
-package com.bobo.springbootrest.hello;
+package com.bobo.springbootrest.bean;
 
 import lombok.Data;
 
